@@ -1,12 +1,12 @@
 const axios = require('axios');
 
-async function whatsappMsg(mobile,userName) {
+async function whatsappMsg(mobile, userName) {
 
 
     const recipientNumber = "sandbox_number@whatsapp.net"; // Replace with your test recipient number
     const messageBody = "This is a test message from the Sandbox.";
 
-    const url = "https://graph.facebook.com/v18.0/XXXXXXXXXXXX/messages"; // Replace with actual endpoint (not available in Sandbox)
+    const url = "https://graph.facebook.com/v18.0/XXXXXXXXXXXXXXXXXXXXXXXX/messages"; // Replace with actual endpoint (not available in Sandbox)
     // const data = {
     //     messaging_product: "whatsapp",
     //     to: recipientNumber,
@@ -15,8 +15,6 @@ async function whatsappMsg(mobile,userName) {
     //         body: messageBody,
     //     },
     // };
-
-    const messageText = "Dear " + userName + ", We are pleased to provide you with a summary of your recent banking transactions for the period .";
 
     const data = {
         "messaging_product": "whatsapp",
@@ -30,11 +28,11 @@ async function whatsappMsg(mobile,userName) {
             "components": [
                 {
                     "type": "body",
-                    "parameters":[
+                    "parameters": [
                         {
-                            "type":"text",
-                            "text":userName
-                        }
+                            "type": "text",
+                            "text": userName
+                        },
                     ]
                 }
             ]
@@ -44,7 +42,7 @@ async function whatsappMsg(mobile,userName) {
     // Simulate the POST request (not functional in Sandbox)
     await axios.post(url, data, {
         headers: {
-            "Authorization": `Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`, // Replace with your access token
+            "Authorization": `Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`, // Replace with your access token
             "Content-Type": "application/json",
         },
     })
